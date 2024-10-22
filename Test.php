@@ -1,38 +1,46 @@
 <?php
+
 class Manager
 {
     private int $id;
     private string $start_work;
     private int $id_department;
+
     public function __construct(int $id, string $start_work, int $id_department)
     {
         $this->id = $id;
         $this->start_work = $start_work;
         $this->id_department = $id_department;
     }
+
     public function getId(): int
     {
         return $this->id;
     }
 }
+
 class Company
 {
     private int $id;
+
     public function __construct(int $id)
     {
         $this->id = $id;
     }
+
     public function getId(): int
     {
         return $this->id;
     }
 }
+
 class Department
 {
     private int $id;
     private string $name;
     private string $location;
     private string $id_company;
+
     public function __construct(int $id, string $name, string $location, string $id_company)
     {
         $this->id = $id;
@@ -40,11 +48,13 @@ class Department
         $this->location = $location;
         $this->id_company = $id_company;
     }
+
     public function getName(): string
     {
         return $this->name;
     }
 }
+
 class Employee
 {
     private int $id;
@@ -56,6 +66,7 @@ class Employee
     private string $gender;
     private Manager $manager;
     private Department $department;
+
     public function __construct(int $id, string $name, int $age, float $salary, string $address, int $insurance_number, string $gender, Manager $manager, Department $department)
     {
         $this->id = $id;
@@ -68,6 +79,7 @@ class Employee
         $this->manager = $manager;
         $this->department = $department;
     }
+
     public function getInfo(): string
     {
         return "Id: $this->id, Name: $this->name, Age: $this->age, Salary: $this->salary, Addess: $this->address, Insurance number: $this->insurance_number, Gender: $this->gender,
@@ -84,11 +96,13 @@ class Work_place
 {
     private int $id;
     private int $id_department;
+
     public function __construct(int $id, int $id_department)
     {
         $this->id = $id;
         $this->id_department = $id_department;
     }
+
     public function getId(): int
     {
         return $this->id;
@@ -102,6 +116,7 @@ class Project
     private string $project_name;
     private int $id_department;
     private int $id_work_place;
+
     public function __construct(int $id, string $project_code, string $project_name, int $id_department, int $id_work_place)
     {
         $this->id = $id;
@@ -110,6 +125,7 @@ class Project
         $this->id_department = $id_department;
         $this->id_work_place = $id_work_place;
     }
+
     public function getId(): int
     {
         return $this->id;
@@ -123,6 +139,7 @@ class Working_time
     private int $workweek;
     private int $id_employee;
     private int $id_project;
+
     public function __construct(int $id, int $work_hour, int $workweek, int $id_employee, int $id_project)
     {
         $this->id = $id;
@@ -131,6 +148,7 @@ class Working_time
         $this->id_employee = $id_employee;
         $this->id_project = $id_project;
     }
+
     public function getId(): int
     {
         return $this->id;
@@ -138,4 +156,29 @@ class Working_time
 }
 
 class Children
+{
+    private int $id;
+    private string $name;
+    private string $gender;
+    private string $date_of_birth;
+    private int $employee_id;
+
+    public function __construct(int $id, string $name, string $gender, string $date_of_birth, int $employee_id)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->gender = $gender;
+        $this->date_of_birth = $date_of_birth;
+        $this->employee_id = $employee_id;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+}
+
+
+
+
 
